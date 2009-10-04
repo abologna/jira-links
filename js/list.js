@@ -1,5 +1,7 @@
 var List = {};
 
+List.defaultFavicon = 'http://farm1.static.flickr.com/95/232542416_10f214442c.jpg?v=0';
+
 List.addLink = function(url, description) {
   $('#link-list')
     .append($('<div/>')
@@ -32,6 +34,13 @@ List.faviconFromUrl = function(url) {
   return url.split('/').splice(0,3).join('/')+'/favicon.ico';
 }
 
+List.fixUnloadedFavicons = function (){
+  $(".favicon").each(function(index,elt){
+    if(!elt.naturalWidth)
+      elt.src = List.defaultFavicon
+  });
+}
+
 
 List.log = function(msg) {
   console.log(msg);
@@ -47,4 +56,6 @@ $("document").ready(function(){
       8,
       List.addDeliciousLinks);
 });
+
+window.onload = List.fixUnloadedFavicons
 
