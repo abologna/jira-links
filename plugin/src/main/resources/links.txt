@@ -1,2 +1,2 @@
-ID3::This is the description of the Link::http://www.google.com
-IDS::This is another description::http://www.gmail.com
+ID3#This is the description of the Link#http://www.google.com
+IDS#This is another description#http://www.gmail.com

@@ -1,5 +1,6 @@
 <atlassian-plugin key="rest-service-demo" name="REST service" plugins-version="2">
     <plugin-info>
+	<param name="links.url">.src/resources</param>
         <description>Sarasa</description>
         <version>0.1</version>
         <vendor name="Pablo Fernandez" url="www.google.com" />
