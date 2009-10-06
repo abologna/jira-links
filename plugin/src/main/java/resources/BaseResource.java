@@ -27,4 +27,11 @@ public abstract class BaseResource {
   protected boolean paramIsPresent(String name, HttpServletRequest request){
     return request.getParameter(name) != null && request.getParameter(name).length() > 0;
   }
+  
+  protected boolean paramsArePresent(HttpServletRequest request,String... params){
+    boolean ok = true;
+    for(String param : params)
+      ok = ok && paramIsPresent(param,request);
+    return ok;
+  }
 }
