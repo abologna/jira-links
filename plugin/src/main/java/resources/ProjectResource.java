@@ -31,14 +31,14 @@ public class ProjectResource extends BaseResource{
     
     for (Project project : getProjectsForUser(getCurrentUser(request), request))
       projectRepresentations.add(new ProjectRepresentation(project));
-    
+
     ProjectsRepresentation allProjects = new ProjectsRepresentation(projectRepresentations);
     return Response.ok(allProjects).build();
   }
   
   public Collection<Project> getProjectsForUser(User user, HttpServletRequest request){
     return (request.getParameter("owned") != null) ?
-           permissionManager.getProjectObjects(Permissions.ADMINISTER, user) :
+           permissionManager.getProjectObjects(Permissions.PROJECT_ADMIN, user) :
            permissionManager.getProjectObjects(Permissions.BROWSE, user);
   }
 }
