@@ -23,6 +23,6 @@ function buttonsLoad(){
 			})
 		})
 	})
-});
+}
 
 gadgets.util.registerOnLoadHandler(buttonsLoad);
