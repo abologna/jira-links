@@ -22,8 +22,11 @@
     <script type="text/javascript" src="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/js/links.js"></script>
     <script type="text/javascript" src="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/js/list.js"></script>
     <script type="text/javascript" src="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/js/buttons.js"></script>
-  
+
     <div id="container">
+      
+      <div id="projects">
+      </div>
       
 			<div id="link-list">
 			</div>
