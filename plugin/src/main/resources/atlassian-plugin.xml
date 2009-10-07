@@ -7,6 +7,22 @@
 		<application-version min="4.0" />
     </plugin-info>
 
+    <gadget key="links-gadget" name="JIRA Links Gadget" location="gadget/links.xml"/>
+ 
+    <resource type="download" name="list.js" location="gadget/js/list.js">
+        <param name="content-type" value="text/javascript"/>
+    </resource>
+    <resource type="download" name="buttons.js" location="gadget/js/buttons.js">
+        <param name="content-type" value="text/javascript"/>
+    </resource>
+    <resource type="download" name="list.css" location="gadget/style/list.css">
+        <param name="content-type" value="text/css"/>
+    </resource>
+    <resource type="download" name="buttons.css" location="gadget/style/buttons.css">
+        <param name="content-type" value="text/css"/>
+    </resource>
+
+
 	<rest key="rest-service-demo" path="/rest-api" version="0.1">
 		<description>ASDFASDF</description>
 	</rest>
