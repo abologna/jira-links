@@ -13,6 +13,7 @@ List.addLink = function(url, description) {
       .append($('<a/>')
         .attr('href', url)
         .attr('class', 'link-description')
+				.attr('target', '_blank')
         .text(description))
     );
 }
