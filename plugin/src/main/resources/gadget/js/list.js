@@ -51,15 +51,12 @@ List.clear = function() {
 }
 
 List.addFetchedLinks = function(dataString) {
-  console.log(dataString);
   
   // TODO: Remove when backend returns links by project. Just for testing.
   var stub = {links:[
     {url:'http://mail.google.com', description:'GMail Inbox', delicious:false},
     {url:'http://www.google.com', description:'Google Search', delicious:false},
     {url:'http://feeds.delicious.com/v2/json/bologna/opensocial', description:'', delicious:true}]};
-    
-  List.clear();
   
   $.each(stub.links, function() {
     if (this.delicious) {
@@ -72,7 +69,7 @@ List.addFetchedLinks = function(dataString) {
 
 List.onProjectChange = function() {
   var id = $(this).val();
-  console.log('changed to : ' + id);
+  List.clear();
   Links.fetchLinks(id, List.addFetchedLinks);
 }
 
