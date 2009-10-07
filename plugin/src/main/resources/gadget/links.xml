@@ -24,13 +24,15 @@
     <script type="text/javascript" src="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/js/buttons.js"></script>
   
     <div id="container">
-      <div id="link-list"/>
+      
+			<div id="link-list">
+			</div>
 
 	  	<div id="commands">
 		
-	    <div id="forms">
+	    	<div id="forms">
 		
-	      <div class="pop-form" id="new-link-form">
+	      	<div class="pop-form" id="new-link-form">
 	        <h2>Add link:</h2>
 	        <form id="link-form" action="">
 	          <label for="link">Link:</label><br/>
@@ -40,7 +42,7 @@
 	        </form>
 	      </div>
 
-	      <div class="pop-form" id="new-delicious-link-form">
+	      	<div class="pop-form" id="new-delicious-link-form">
 	        <h2>Add del.icio.us link:</h2>
 	        <h3>Import a bunch del.icio.us links</h3>
 	        <form id="delicious-form" action="">
@@ -53,9 +55,9 @@
 	        </form>
 	      </div>
 	
-	    </div>
+	    	</div>
 
-	    <div id="button-pad">
+	    	<div id="button-pad">
 	      <a href="javascript:void(0);" id="new-link">Add Link</a>
 	      <a href="javascript:void(0);" id="new-delicious-link">Add Delicious Link</a>
 	    </div>
