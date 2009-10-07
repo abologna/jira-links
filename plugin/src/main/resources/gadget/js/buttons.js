@@ -1,4 +1,4 @@
-$("document").ready(function(){
+function buttonsLoad(){
 
   $("#new-link").click(function(){
     $("#new-delicious-link-form").fadeOut(function(){
@@ -23,5 +23,6 @@ $("document").ready(function(){
 			})
 		})
 	})
-
 });
+
+gadgets.util.registerOnLoadHandler(buttonsLoad);
