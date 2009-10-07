@@ -2,8 +2,8 @@
 <Module>
 
   <ModulePrefs title="JIRA Links" directory_title="JIRA Links"
-      screenshot="http://labs.atlassian.com/svn/GADGETS/trunk/jira-issues/basic/jira-issues-screenshot.png"
-      thumbnail="http://labs.atlassian.com/svn/GADGETS/trunk/jira-issues/basic/jira-issues-thumbnail.png">
+      screenshot="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/img/screenshot.png"
+      thumbnail="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/img/thumbnail.png">
     <Require feature="minimessage" />
     <Require feature="dynamic-height" />
     <Optional feature="gadget-directory">
@@ -15,12 +15,13 @@
 
 <![CDATA[
 
-    <link type="text/css" rel="stylesheet" href="http://ecoride.linkedinlabs.com/newopensocialframe/jira/style/list.css"></link>
-    <link type="text/css" rel="stylesheet" href="http://ecoride.linkedinlabs.com/newopensocialframe/jira/style/buttons.css"></link> 
+    <link type="text/css" rel="stylesheet" href="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/style/list.css"></link>
+    <link type="text/css" rel="stylesheet" href="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/style/buttons.css"></link> 
   
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript" src="http://ecoride.linkedinlabs.com/newopensocialframe/jira/js/list.js"></script>
-    <script type="text/javascript" src="http://ecoride.linkedinlabs.com/newopensocialframe/jira/js/buttons.js"></script>
+    <script type="text/javascript" src="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/js/links.js"></script>
+    <script type="text/javascript" src="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/js/list.js"></script>
+    <script type="text/javascript" src="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/js/buttons.js"></script>
   
     <div id="container">
       <div id="link-list"/>

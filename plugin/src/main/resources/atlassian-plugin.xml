@@ -15,6 +15,9 @@
     <resource type="download" name="buttons.js" location="gadget/js/buttons.js">
         <param name="content-type" value="text/javascript"/>
     </resource>
+    <resource type="download" name="links.js" location="gadget/js/links.js">
+        <param name="content-type" value="text/javascript"/>
+    </resource>
     <resource type="download" name="list.css" location="gadget/style/list.css">
         <param name="content-type" value="text/css"/>
     </resource>
