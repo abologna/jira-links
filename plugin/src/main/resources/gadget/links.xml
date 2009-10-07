@@ -2,8 +2,8 @@
 <Module>
 
   <ModulePrefs title="JIRA Links" directory_title="JIRA Links"
-      screenshot="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/img/screenshot.png"
-      thumbnail="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/img/thumbnail.png">
+      screenshot="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/img/screenshot.png"
+      thumbnail="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/img/thumbnail.png">
     <Require feature="minimessage" />
     <Require feature="dynamic-height" />
     <Optional feature="gadget-directory">
