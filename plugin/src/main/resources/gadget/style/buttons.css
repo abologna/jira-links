@@ -1,6 +1,5 @@
 .pop-form{
   font-family:monospace;
-  float:left;
 }
 
 .pop-form h2{
@@ -24,6 +23,5 @@ div.pop-form {
 
 #commands {
   border:1px solid gray;
-  float:right;
 }
 

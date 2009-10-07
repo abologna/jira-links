@@ -25,37 +25,38 @@
   
     <div id="container">
       <div id="link-list"/>
-    </div>
 
-      <div id="commands">
-        <div id="forms">
-	        <div class="pop-form" id="new-link-form">
-            <h2>Add link:</h2>
-            <form id="link-form" action="">
-              <label for="link">Link:</label><br/>
-              <input type="text" id="link" name="link" />
-            </form>
-          </div>
+	  	<div id="commands">
+	    <div id="forms">
+	      <div class="pop-form" id="new-link-form">
+	        <h2>Add link:</h2>
+	        <form id="link-form" action="">
+	          <label for="link">Link:</label><br/>
+	          <input type="text" id="link" name="link" /><br/>
+						<input type="button" id="submitLink" value="add link" />
+						<input type="button" class="cancel" value="cancel" />
+	        </form>
+	      </div>
 
-	        <div class="pop-form" id="new-delicious-link-form">
-            <h2>Add del.icio.us link:</h2>
-            <h3>Import a bunch del.icio.us links</h3>
-            <form id="delicious-form" action="">
-              <label for="user">User:</label><br/>
-              <input type="text" id="user" name="user"/><br/>
-              <label for="tag">Tag:</label><br/>
-              <input type="text" id="tag" name="tag"/><br/>
-            </form>
-          </div>
-        </div>
+	      <div class="pop-form" id="new-delicious-link-form">
+	        <h2>Add del.icio.us link:</h2>
+	        <h3>Import a bunch del.icio.us links</h3>
+	        <form id="delicious-form" action="">
+	          <label for="user">User:</label><br/>
+	          <input type="text" id="user" name="user"/><br/>
+	          <label for="tag">Tag:</label><br/>
+	          <input type="text" id="tag" name="tag"/><br/>
+						<input type="button" id="submitDelicious" value="add links" />
+						<input type="button" class="cancel" value="cancel" />
+	        </form>
+	      </div>
+	    </div>
 
-        <div id="button-pad">
-          <button type="button" name="new-link" id="new-link">Add Link</button>
-          <button type="button" name="new-delicious-link" id="new-delicious-link">Add Delicious Link</button>
-        </div>
-      </div>
-      <br style="clear:both"/>
-    </div>  
+	    <div id="button-pad">
+	      <a href="javascript:void(0);" id="new-link">Add Link</a>
+	      <a href="javascript:void(0);" id="new-delicious-link">Add Delicious Link</a>
+	    </div>
+	  	</div>
 
 
 ]]>
