@@ -37,6 +37,8 @@
 	        <form id="link-form" action="">
 	          <label for="link">Link:</label><br/>
 	          <input type="text" id="link" name="link" /><br/>
+						<label for="desc">Description:</label><br/>
+	          <input type="text" id="desc" name="desc" /><br/>
 						<input type="button" id="submitLink" value="add link" />
 						<input type="button" class="cancel" value="cancel" />
 	        </form>
