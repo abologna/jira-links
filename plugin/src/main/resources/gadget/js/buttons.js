@@ -25,19 +25,19 @@ function buttonsLoad(){
 	});
 	
 	$('#submitLink').click(function(){
-		var project = $('#project-selector');
+		var project = $('#project-selector').val();
 		var url = $('#link').val();
 		var desc = $('#desc').val();
 		Links.saveLink(project,url,desc);
-		
+		$($('input.cancel')[0]).click();		
 	});
 	
 	$('#submitDelicious').click(function(){
-		var project = $('#project-selector');
+		var project = $('#project-selector').val();
 		var url = 'http://feeds.delicious.com/v2/json/'
 		url = url + $('#user').val() + '/' + $('#tag').val();
-		Links.saveLink(project,url,'');
-		$($('input.cancel')[0]).click()
+		Links.saveLink(project,url,'del.icio.us');
+		$($('input.cancel')[0]).click();
 	});
 }
 
