@@ -1,5 +1,6 @@
 var Links = {};
 Links.server = 'http://localhost:8080/rest/rest-api/0.1'
+Links.deliciousFeedUrl = 'http://feeds.delicious.com/v2/json/';
 
 Links.showSpinner = function () {}
 Links.hideSpinner = function () {}

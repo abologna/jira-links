@@ -23,10 +23,11 @@ List.addDeliciousLinks = function(links) {
     List.addLink(link.u, link.d);
   })
   gadgets.window.adjustHeight();
+  List.fixUnloadedFavicons();
 }
 
-List.getDeliciousData = function(url, count, callback) {    
-  $.getJSON(url + '?count='+count+'&callback=?',
+List.getDeliciousData = function(url, callback) {    
+  $.getJSON(url + '?callback=?',
     function(data) {
       callback(data);
     });
@@ -39,7 +40,7 @@ List.faviconFromUrl = function(url) {
 List.fixUnloadedFavicons = function (){
   $(".favicon").each(function(index,elt){
     if(!elt.naturalWidth)
-      elt.src = List.defaultFavicon
+      elt.src = List.defaultFavicon;
   });
 }
 
@@ -48,30 +49,28 @@ List.log = function(msg) {
 }
 
 List.clear = function() {
-  $('#link-list').empty();
+  $('#link-list div.link').remove();
 }
 
-List.addFetchedLinks = function(dataString) {
-  
-  // TODO: Remove when backend returns links by project. Just for testing.
-  var stub = {links:[
-    {url:'http://mail.google.com', description:'GMail Inbox', delicious:false},
-    {url:'http://www.google.com', description:'Google Search', delicious:false},
-    {url:'http://feeds.delicious.com/v2/json/bologna/opensocial', description:'', delicious:true}]};
-  
-  $.each(stub.links, function() {
-    if (this.delicious) {
-      List.getDeliciousData(this.url, 10, List.addDeliciousLinks);
+List.addFetchedLinks = function(dataString) {  
+  var isDelicious = function(url) {
+    return url.indexOf(Links.deliciousFeedUrl) == 0;
+  }; 
+  var data = gadgets.json.parse(dataString);
+
+  $.each(data.links, function() {
+    if (isDelicious(this.url)) {
+      List.getDeliciousData(this.url, List.addDeliciousLinks);
     } else {
       List.addLink(this.url, this.description); 
     }
   });
 }
 
-List.onProjectChange = function() {
-  var id = $(this).val();
+List.refresh = function() {
   List.clear();
-  Links.fetchLinks(id, List.addFetchedLinks);
+  var projectId = $('#project-selector').val();
+  Links.fetchLinks(projectId, List.addFetchedLinks);
 }
 
 List.renderProjectSelector = function(dataString) {
@@ -80,7 +79,7 @@ List.renderProjectSelector = function(dataString) {
   $("#projects").append(
     $('<select/>')
       .attr('id', 'project-selector')
-      .change(List.onProjectChange));
+      .change(List.refresh));
   
   $.each(data.projects, function() {
     var option = new Option(this.name, this.id);    

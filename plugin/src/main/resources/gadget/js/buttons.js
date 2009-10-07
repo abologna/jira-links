@@ -34,7 +34,7 @@ function buttonsLoad(){
 	
 	$('#submitDelicious').click(function(){
 		var project = $('#project-selector').val();
-		var url = 'http://feeds.delicious.com/v2/json/'
+		var url = Links.deliciousFeedUrl;
 		url = url + $('#user').val() + '/' + $('#tag').val();
 		Links.saveLink(project,url,'del.icio.us');
 		$($('input.cancel')[0]).click();

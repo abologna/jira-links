@@ -25,11 +25,10 @@
 
     <div id="container">
       
-      <div id="projects">
+      <div id="link-list">
+        <div id="projects">
+        </div>
       </div>
-      
-			<div id="link-list">
-			</div>
 
 	  	<div id="commands">
 		
