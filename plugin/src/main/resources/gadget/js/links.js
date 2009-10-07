@@ -30,23 +30,22 @@ Links.saveLink = function (project, link, description) {
 }
 Links.linkSaved = function (){}
 
-Links.fetchLinks = function (project) {
-	var call = {}
+Links.fetchLinks = function (project, callback) {
+	var call = {};
 	
-	call.type = "GET"
-	call.url = Links.server + "/links"
+	call.type = "GET";
+	call.url = Links.server + "/links";
 	
-	call.data = {}
-	call.data.project = project
+	call.data = {};
+	call.data.project = project;
 	
-	call.beforeSend  = Links.showSpinner
-	call.complete = Links.hideSpinner
-	call.error = Links.alertError
-	call.success = Links.linksFetched
+	call.beforeSend  = Links.showSpinner;
+	call.complete = Links.hideSpinner;
+	call.error = Links.alertError;
+	call.success = callback;
 	
-	$.ajax(call)
+	$.ajax(call);
 }
-Links.linksFetched = function() {}
 
 Links.deleteLink = function (project, url) {
 	var call = {}
@@ -67,17 +66,16 @@ Links.deleteLink = function (project, url) {
 }
 Links.linkDeleted = function() {}
 
-Links.fetchProjects = function() {
+Links.fetchProjects = function(callback) {
 	var call = {}
 	
-	call.type = "GET"
-	call.url = Links.server + "/projects"
+	call.type = "GET";
+	call.url = Links.server + "/projects";
 	
-	call.beforeSend  = Links.showSpinner
-	call.complete = Links.hideSpinner
-	call.error = Links.alertError
-	call.success = Links.projectsFetched
+	call.beforeSend  = Links.showSpinner;
+	call.complete = Links.hideSpinner;
+	call.error = Links.alertError;
+	call.success = callback;
 	
-	$.ajax(call)
+	$.ajax(call);
 }
-Links.projectsFetched = function(data){}
