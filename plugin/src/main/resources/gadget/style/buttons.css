@@ -1,3 +1,16 @@
+a.link-description {
+	font-family:arial,sans-serif;
+	color:#003366;
+	text-decoration:none;
+	font-size:small;
+	padding:2px;
+}
+a.link-description:hover{
+	color:#336699;
+	background-color:#F2F2F2;
+	text-decoration:underline;
+}
+
 .pop-form{
   font-family:monospace;
 }
