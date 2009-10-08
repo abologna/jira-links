@@ -30,6 +30,7 @@ function buttonsLoad(){
 		var desc = $('#desc').val();
 		Links.saveLink(project,url,desc);
 		$($('input.cancel')[0]).click();		
+		List.refresh()
 	});
 	
 	$('#submitDelicious').click(function(){
@@ -38,7 +39,25 @@ function buttonsLoad(){
 		url = url + $('#user').val() + '/' + $('#tag').val();
 		Links.saveLink(project,url,'del.icio.us');
 		$($('input.cancel')[0]).click();
+		List.refresh()
 	});
+	
+	$('div.link').live('mouseover', function(e){
+		$(this).addClass('hover');
+		$(this).children('a.trash').fadeIn()
+	});
+	
+	$('div.link').live('mouseout', function(e){
+		$(this).removeClass('hover');
+		$(this).children('a.trash').fadeOut();
+	});
+	
+	$('a.trash').live('click',function(){
+		if(confirm("Are you sure?")){
+			Links.deleteLink($('#project-selector').val(),$(this).prev('a').attr('href'))
+			setTimeout(List.refresh,100)
+		}
+	})
 }
 
 gadgets.util.registerOnLoadHandler(buttonsLoad);

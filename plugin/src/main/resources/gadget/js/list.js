@@ -9,13 +9,23 @@ List.addLink = function(url, description) {
       .append($('<img/>')
         .attr('src', List.faviconFromUrl(url))
         .attr('alt', '')
-        .attr('class', 'favicon'))
+        .attr('class', 'favicon')
+			 )
       .append($('<a/>')
         .attr('href', url)
         .attr('class', 'link-description')
 				.attr('target', '_blank')
-        .text(description))
-    );
+       	.text(description)
+			 )
+			 .append($('<a/>')
+			 	.attr('href','javascript:void(0)')
+				.addClass('trash')
+					.append($('<img/>')
+						.attr('src','http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/img/trash-can.png')
+						.attr('border','0')
+					)
+				)
+    	);
 }
 
 List.addDeliciousLinks = function(links) {
@@ -57,7 +67,7 @@ List.addFetchedLinks = function(dataString) {
     return url.indexOf(Links.deliciousFeedUrl) == 0;
   }; 
   var data = gadgets.json.parse(dataString);
-
+  if(!data) return;
   $.each(data.links, function() {
     if (isDelicious(this.url)) {
       List.getDeliciousData(this.url, List.addDeliciousLinks);
@@ -75,7 +85,6 @@ List.refresh = function() {
 
 List.renderProjectSelector = function(dataString) {
   var data = gadgets.json.parse(dataString);
-  
   $("#projects").append(
     $('<select/>')
       .attr('id', 'project-selector')
@@ -95,4 +104,3 @@ List.load = function() {
 }
 
 gadgets.util.registerOnLoadHandler(List.load);
-

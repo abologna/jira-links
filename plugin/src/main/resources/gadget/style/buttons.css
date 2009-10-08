@@ -5,9 +5,18 @@ a.link-description {
 	font-size:small;
 	padding:2px;
 }
+div.link{
+	padding:5px;
+}
+div.hover {
+	background-color:#F2F2F2;
+}
+a.trash{
+	float:right;
+	display:none;
+}
 a.link-description:hover{
 	color:#336699;
-	background-color:#F2F2F2;
 	text-decoration:underline;
 }
 
