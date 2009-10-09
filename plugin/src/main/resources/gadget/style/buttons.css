@@ -38,12 +38,31 @@ a.link-description:hover{
   font-size:small;
 }
 
-
 div.pop-form {
   display:none;
 }
 
-#commands {
-  border:1px solid gray;
+#button-pad {
+	margin:20px;
 }
 
+#button-pad a {
+	font-family:monospace;
+	padding:3px;
+	border:1px solid;
+	text-decoration:none;
+	color:#003366;
+}
+
+#button-pad a:hover{
+	background:#DDECFE;
+	text-decoration:underline;
+}
+#new-delicious-link:hover{
+	background:url(http://delicious.com/favicon.ico) no-repeat left center #DDECFE !important;
+}
+
+#new-delicious-link{
+	padding:3px 3px 3px 25px !important;
+	background:url(http://delicious.com/favicon.ico) no-repeat left center;
+}
