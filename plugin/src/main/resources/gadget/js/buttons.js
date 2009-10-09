@@ -30,7 +30,30 @@ function buttonsLoad(){
 		var desc = $('#desc').val();
 		Links.saveLink(project,url,desc);
 		$($('input.cancel')[0]).click();		
-		List.refresh()
+		List.refresh();
+	});
+	
+    $('#link').blur(function() {
+      $('em.error').remove();
+      $('#desc').attr('disabled', true);
+      $('#submitLink').attr('disabled', true);
+      addSpinner($('#link'), 'link-spinner');
+	  
+	  Links.validateUrl(this.value, 
+	    function(success, data) {
+	      if(success) {
+	        $('#desc')
+	          .attr('disabled', false)
+	          .val(data);
+            $('#submitLink').attr('disabled', false);
+	      } else {
+	        $('<em/>')
+	          .attr('class', 'error')
+	          .text('Broken Link')
+	          .insertAfter('#link');
+	      }
+	      removeSpinner('link-spinner');
+	    });
 	});
 	
 	$('#submitDelicious').click(function(){
@@ -58,6 +81,18 @@ function buttonsLoad(){
 			setTimeout(List.refresh,100)
 		}
 	})
+}
+
+function addSpinner(element, newId) {
+  $('<img/>')
+    .attr('id', newId)
+    .attr('src','http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/img/ajax-loader.gif')
+    .attr('border','0')
+    .insertAfter(element);
+}
+
+function removeSpinner(id) {
+  $('#'+id).remove();
 }
 
 gadgets.util.registerOnLoadHandler(buttonsLoad);

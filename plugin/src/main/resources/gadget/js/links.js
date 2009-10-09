@@ -80,3 +80,21 @@ Links.fetchProjects = function(callback) {
 	
 	$.ajax(call);
 }
+
+Links.validateUrl = function(url, callback) {
+  var params = {};
+  params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.HTML;
+  
+  var handleResponse = function(data) {
+    if (data.rc == 200) {
+      data.text.search(/<\s*title\s*>([\w\W]*)<\s*\/title\s*>/i);
+      var title = RegExp.$1;
+      callback(true, title);
+    } else if (data.rc < 400) {
+      callback(true, '');
+    } else {
+      callback(false);
+    }
+  }
+  gadgets.io.makeRequest(url, handleResponse, params);	
+}
