@@ -1,14 +1,18 @@
-<atlassian-plugin key="rest-service-demo" name="REST service" plugins-version="2">
-    <plugin-info>
-	<param name="links.url">.src/resources</param>
-        <description>Sarasa</description>
-        <version>0.1</version>
-        <vendor name="Pablo Fernandez" url="www.google.com" />
-		<application-version min="4.0" />
-    </plugin-info>
+<atlassian-plugin key="rest-service-demo" name="Links Hub" plugins-version="2">
+  <plugin-info>
+    <param name="links.url">.src/resources</param>
+    <description>
+      Save and share links with your team on your project's JIRA dashboard.
+    </description>
+    <version>0.1</version>
+    <vendor name="Pablo Fernandez - Alejandro Bologna" 
+      url="http://github.com/fernandezpablo85/Links" />
+    <application-version min="4.0" />
+  </plugin-info>
 
-    <gadget key="links-gadget" name="JIRA Links Gadget" location="gadget/links.xml"/>
+  <gadget key="links-gadget" name="Links Hub Gadget" location="gadget/links.xml"/>
  
+  <web-resource key="gadget-files" name="gadget-files" >
     <resource type="download" name="list.js" location="gadget/js/list.js">
         <param name="content-type" value="text/javascript"/>
     </resource>
@@ -24,10 +28,10 @@
     <resource type="download" name="buttons.css" location="gadget/style/buttons.css">
         <param name="content-type" value="text/css"/>
     </resource>
-
+  </web-resource>
 
 	<rest key="rest-service-demo" path="/rest-api" version="0.1">
-		<description>ASDFASDF</description>
+		<description>REST service for the gadget's backend needs.</description>
 	</rest>
 	
 	<component-import key="userManager" interface="com.atlassian.sal.api.user.UserManager" />

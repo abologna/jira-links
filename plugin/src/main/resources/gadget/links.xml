@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
 
-  <ModulePrefs title="JIRA Links" directory_title="JIRA Links"
+  <ModulePrefs title="Links Hub" directory_title="Links Hub"
       screenshot="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/img/screenshot.png"
       thumbnail="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/img/thumbnail.png">
     <Require feature="minimessage" />
@@ -15,13 +15,10 @@
 
 <![CDATA[
 
-    <link type="text/css" rel="stylesheet" href="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/style/list.css"></link>
-    <link type="text/css" rel="stylesheet" href="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/style/buttons.css"></link> 
-  
+    #requireResource("rest-service-demo:gadget-files")
+    #includeResources()
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript" src="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/js/links.js"></script>
-    <script type="text/javascript" src="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/js/list.js"></script>
-    <script type="text/javascript" src="http://github.com/fernandezpablo85/Links/raw/master/plugin/src/main/resources/gadget/js/buttons.js"></script>
 
     <div id="container">
       
